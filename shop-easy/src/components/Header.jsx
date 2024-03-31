@@ -9,7 +9,7 @@ function Header(){
       <ul>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#">Items Menu</a></li>
+        <li><a href="#">Products</a></li>
       </ul>
       <div className='header-btns'>
         <button className='header-btn'>Sign In</button>

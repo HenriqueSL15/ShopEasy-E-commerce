@@ -8,7 +8,7 @@ body {
 }
 
 nav{
-  width: 97.4vw;
+  width: 97.75vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -120,4 +120,52 @@ nav ul li a:hover{
   font-family: "Reddit Mono";
   font-weight: 300;
   font-size: 20px;
+}
+
+/* CONTACT */
+
+.contact{
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+}
+
+.contact-list{
+  width: 350px;
+  text-align: start;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+}
+
+.contact-info{
+  display: flex;
+  align-items: center;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+}
+
+.contact-info h1{
+  margin: 0px 15px;
+  transition: color 0.4s;
+}
+
+.contact-info .contact-link:hover{
+  cursor: pointer;
+  color: purple;
+}
+
+.contact-list h1{
+  margin: 25px 0px;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.contact-logo{
+  width: 80px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 20px;
+  margin: 0px 40px;
 }
