@@ -169,3 +169,119 @@ nav ul li a:hover{
   border-radius: 20px;
   margin: 0px 40px;
 }
+
+/* PRODUCTS */
+
+.container-1{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-1 h1{
+  margin-left: 55px;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 40px;
+  margin-right: 50px;
+}
+
+.products .container-2 h1{
+  margin-left: 60px;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 30px;
+  margin-right: 60px;
+  margin-bottom: 0px;
+}
+
+.products ul{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.products-categories li{
+  width: 200px;
+  padding: 15px 0px;
+  margin: 0px;
+  height: 25px;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.products-categories li:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;  
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product-box{
+  width: 26.8%;
+  margin: 30px 40px;
+  box-shadow: 0px 0px 10px #88888846;
+  border-radius: 15px;
+  transition: transform 0.4s;
+}
+
+.product-box .container-2{
+  margin: 0px 20px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-name{
+  text-align: center;
+  font-style: italic;
+  margin-right: 60px;
+}
+
+.product-description{
+  text-align: center;
+  font-size: 18px;
+}
+
+.product-image{
+  width: 120px;
+}
+
+.product-price{
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+}
+
+.product-box:hover{
+  transform: scale(1.05);
+}
+
+.btn{
+  background-color: purple;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  margin: 0px 3px;
+  transition: background-color 0.4s, transform 0.4s;
+  font-size: 14px;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: darkblue;
+  transform: scale(1.05);
+}
