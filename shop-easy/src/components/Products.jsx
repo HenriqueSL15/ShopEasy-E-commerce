@@ -1,13 +1,23 @@
 import {React, useEffect, useState } from 'react'
 import '../App.css'
 import ProductBox from './Product-box.jsx'
-import meat1 from '../images/meat1.png'
+import Grains from './Grains.jsx'
+
+import rice from '../images/rice1.png'
+import bean from '../images/bean1.jpg'
+
+import banana from '../images/banana1.jpg'
+
+import meat from '../images/meat1.png'
+
 
 function Products(){
+  let productUrl = [];
   let opcoes = ['spices', 'meats', 'fruitsAndVegetables', 'cleaningProducts'];
   const [products, setProducts] = useState('');
-  console.log(products)
+  productUrl = [rice,bean,banana,meat]
   const [itens, setItens] = useState([]);
+  console.log(productUrl)
 
   function clicked(param){
     opcoes.map((value,index) => {
@@ -29,8 +39,13 @@ function Products(){
         </ul>
       </div>
       <div className='container-2 row'>
-          <ProductBox imageLink={meat1}/>
-          <ProductBox imageLink={meat1}/>
+        {
+          Object.entries(Grains).map(([key, value],index) => {
+            return <>
+              <ProductBox key={key} productName={key} productPrice={value.price} productDescription={value.description} imageLink={productUrl[index]}></ProductBox>
+            </>
+          })
+        }
       </div>
     </nav>
   </>
