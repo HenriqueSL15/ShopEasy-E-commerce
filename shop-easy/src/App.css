@@ -189,8 +189,8 @@ nav ul li a:hover{
   margin-left: 60px;
   font-family: "Reddit Mono";
   font-weight: 300;
-  font-size: 30px;
-  margin-right: 60px;
+  font-size: 25px;
+  margin-right: 30px;
   margin-bottom: 0px;
 }
 
@@ -229,16 +229,17 @@ nav ul li a:hover{
 }
 
 .product-box{
-  width: 26.8%;
-  margin: 30px 40px;
+  width: 30.8%;
+  margin: 30px 10px;
   box-shadow: 0px 0px 10px #88888846;
   border-radius: 15px;
   transition: transform 0.4s;
 }
 
 .product-box .container-2{
-  margin: 0px 20px;
-  height: 400px;
+  margin: 0px 30px;
+  width: 300px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -247,7 +248,6 @@ nav ul li a:hover{
 .product-name{
   text-align: center;
   font-style: italic;
-  margin-right: 60px;
 }
 
 .product-description{
@@ -256,7 +256,7 @@ nav ul li a:hover{
 }
 
 .product-image{
-  width: 120px;
+  height: 160px;
 }
 
 .product-price{

@@ -1,30 +1,46 @@
 import {React, useEffect, useState } from 'react'
 import '../App.css'
 import ProductBox from './Product-box.jsx'
-import Grains from './Grains.jsx'
 
-import rice from '../images/rice1.png'
-import bean from '../images/bean1.jpg'
+//Products Types
+import Groceries from './Groceries.jsx'
+import Hortifruti from './Hortifruti.jsx'
+import Drinks from './Drinks.jsx'
 
-import banana from '../images/banana1.jpg'
+//Groceries
+import rice from '../images/Groceries/rice.png'
+import bean from '../images/Groceries/bean.jpg'
+import milk from '../images/Groceries/milk.jpeg'
+import oil from  '../images/Groceries/oil.jpg'
 
-import meat from '../images/meat1.png'
+//Hortifruti
+import banana from '../images/Hortifruti/banana.jpg'
+import potato from '../images/Hortifruti/potato.jpg'
+import greenLemon from '../images/Hortifruti/green_lemon.jpg'
+import carrot from '../images/Hortifruti/carrot.png'
+
+//Meats
+import meat1 from '../images/Meats/meat1.png'
+
+//Drinks
+import cocaCola from '../images/Drinks/coca_cola.png'
+import water from '../images/Drinks/water.jpg'
+import grapeJuice from '../images/Drinks/grapeJuice.jpg'
 
 
 function Products(){
-  let productUrl = [];
-  let opcoes = ['spices', 'meats', 'fruitsAndVegetables', 'cleaningProducts'];
-  const [products, setProducts] = useState('');
-  productUrl = [rice,bean,banana,meat]
-  const [itens, setItens] = useState([]);
-  console.log(productUrl)
+  let groceriesUrl = [];
+  let hortifrutiUrl = [];
+  let drinksUrl = [];
 
+  const [products, setProducts] = useState('');
+
+  groceriesUrl = [rice,bean,milk,oil]
+  hortifrutiUrl = [banana,potato,greenLemon,carrot]
+  drinksUrl = [cocaCola,water,grapeJuice]
+  
   function clicked(param){
-    opcoes.map((value,index) => {
-      if(param === value){
-        setProducts(param)
-      }
-    })
+    setProducts(param);
   }
 
   return <>
@@ -32,20 +48,36 @@ function Products(){
       <div className='container-1'>
         <h1>Products</h1>
         <ul className='products-categories'>
-          <button onClick={() => clicked('spices')}>Spices</button>
+          <button onClick={() => clicked('groceries')}>Groceries</button>
+          <button onClick={() => clicked('drinks')}>Drinks</button>
           <button onClick={() => clicked('meats')}>Meats</button>
-          <button onClick={() => clicked('fruitsAndVegetables')}>Fruits And Vegetables</button>
+          <button onClick={() => clicked('hortifruti')}>Hortifruti</button>
+          <button onClick={() => clicked('bakery')}>Bakery</button>
           <button onClick={() => clicked('cleaningProducts')}>Cleaning Products</button>
         </ul>
       </div>
       <div className='container-2 row'>
-        {
-          Object.entries(Grains).map(([key, value],index) => {
+        {products === 'groceries' && (
+          Object.entries(Groceries).map(([key, value],index) => {
+            console.log(value[1])
             return <>
-              <ProductBox key={key} productName={key} productPrice={value.price} productDescription={value.description} imageLink={productUrl[index]}></ProductBox>
+              <ProductBox key={key} productName={key} productWeightType={value.weightType} productPrice={value.price} imageLink={groceriesUrl[index]}></ProductBox>
             </>
-          })
-        }
+          }))}
+
+        {products === 'hortifruti' && (
+          Object.entries(Hortifruti).map(([key, value],index) => {
+            return <>
+              <ProductBox key={key} productName={key} productWeightType={value.weightType} productPrice={value.price} imageLink={hortifrutiUrl[index]}></ProductBox>
+            </>
+          }))}
+        
+        {products === 'drinks' && (
+          Object.entries(Drinks).map(([key, value],index) => {
+            return <>
+              <ProductBox key={key} productName={key} productWeightType={value.weightType} productPrice={value.price} imageLink={drinksUrl[index]}></ProductBox>
+            </>
+          }))}
       </div>
     </nav>
   </>
