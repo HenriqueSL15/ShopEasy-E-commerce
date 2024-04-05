@@ -12,6 +12,10 @@ const Drinks = {
   'Suco de Uva': {
     price: '18,90',
     weightType: '1,5L'
+  },
+  'Red Bull': {
+    price: '12,00',
+    weightType: '250ml'
   }
 }
 
