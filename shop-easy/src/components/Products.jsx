@@ -3,12 +3,12 @@ import '../App.css'
 import ProductBox from './Product-box.jsx'
 
 //Products Types
-import Groceries from './Groceries.jsx'
-import Hortifruti from './Hortifruti.jsx'
-import Drinks from './Drinks.jsx'
-import Meats from './Meats.jsx'
-import Bakery from './Bakery.jsx'
-import cleaningProducts from './Cleaning Products.jsx'
+import Groceries from './Products/Groceries.jsx'
+import Hortifruti from './Products/Hortifruti.jsx'
+import Drinks from './Products/Drinks.jsx'
+import Meats from './Products/Meats.jsx'
+import Bakery from './Products/Bakery.jsx'
+import cleaningProducts from './Products/Cleaning Products.jsx'
 
 //Groceries
 import rice from '../images/Groceries/rice.png'

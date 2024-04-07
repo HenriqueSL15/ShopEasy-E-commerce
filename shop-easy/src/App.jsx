@@ -1,17 +1,26 @@
 import React from 'react'
-import './App.css'
-import Header from './components/Header.jsx'
-import About from './components/About.jsx'
-import Contact from './components/Contact.jsx'
-import Products from './components/Products.jsx'
+
+import MainPage from './components/mainPage.jsx'
+
+import SignUp from './components/SignUp.jsx'
+import SignUpPage from './components/SignUpPage.jsx'
+
+import SignIn from './components/SignIn.jsx'
+import SignInPage from './components/SignInPage.jsx'
+
+import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <About></About>
-      <Products></Products>
-      <Contact></Contact>
+    <Router basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>
+    </Router>
     </>
   )
 }
