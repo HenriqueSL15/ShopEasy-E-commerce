@@ -5,9 +5,26 @@ const UserModel = require('./models/User.js')
 
 const app = express()
 app.use(express.json())
-app.use(cors)
+app.use(cors())
 
 mongoose.connect("mongodb+srv://myAtlasDBUser:135790@myatlasclusteredu.ufhaxua.mongodb.net/usersDatabase?retryWrites=true&w=majority&appName=myAtlasClusterEDU")
+
+app.post('/signin', (req, res) => {
+  const {email, password} = req.body;
+
+  UserModel.findOne({ email: email })
+  .then((user) => {
+    if(user){
+      if(user.password === password){
+        res.json("Success")
+      }else{
+        res.json("The Password is Incorrect")
+      }
+    }else {
+      res.json("No Record Existed")
+    }
+  })
+})
 
 app.post('/signup', (req,res) => {
   UserModel.create(req.body)
