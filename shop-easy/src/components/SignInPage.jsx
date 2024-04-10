@@ -13,8 +13,8 @@ function SignInPage (){
     e.preventDefault()
     axios.post('http://localhost:3001/signin',{email, password})
     .then(result => {
-      console.log(result)
-      if(result.data === "Success"){
+      console.log(result.data.email)
+      if(result.statusText === "OK"){
         navigate('/')
       }
     })

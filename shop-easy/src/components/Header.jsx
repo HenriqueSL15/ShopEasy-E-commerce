@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css'
 import logo from '../images/SHOP.png'
 import { Link } from 'react-router-dom';
 
-function Header(){
+function Header(user){
+  const [userName,setUserName] = useState("");
+  if(user === ""){
+    console.log("Não tem user")
+  }
   return (
     <nav className='header'>
       <Link to={"/"}>
