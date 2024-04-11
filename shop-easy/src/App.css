@@ -23,15 +23,18 @@ nav{
 /* BOTÕES */
 .header-btns{
   margin-left: 50px;
-  width: 270px;
+  width: 500px;
   margin-right: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .header-btn{
-  transform: scale(1.1);
+  /*transform: scale(1.1);*/
   background-color: rgb(239, 239, 239);
   color: black;
   margin: 0px 15px;
+  height: 25px;
   padding: 8px;
   font-size: 18px;
   border-radius: 7px;
@@ -84,6 +87,15 @@ nav ul li a{
 nav ul li a:hover{
   color: purple;
   transform: scale(1.001);
+}
+
+.userText {
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 /* SOBRE */

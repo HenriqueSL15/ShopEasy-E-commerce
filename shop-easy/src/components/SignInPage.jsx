@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../App.css'
 import { useState } from "react";
 import axios from "axios";
+import { UserContext } from "./UserContext.jsx";
 
 function SignInPage (){
+  const { setUser } = useContext(UserContext)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate()
@@ -13,8 +15,13 @@ function SignInPage (){
     e.preventDefault()
     axios.post('http://localhost:3001/signin',{email, password})
     .then(result => {
-      console.log(result.data.email)
-      if(result.statusText === "OK"){
+      console.log(result)
+      if(result.data === "The Password is Incorrect"){
+        console.log('The Password is Incorrect')
+      }else if(result.data === "No Record Existed"){
+        console.log('No Record Existed')
+      }else{
+        setUser(result.data)
         navigate('/')
       }
     })
