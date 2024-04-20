@@ -1,13 +1,12 @@
 import React from 'react'
 
-import MainPage from './components/mainPage.jsx'
+import MainPage from './components/MainPage.jsx'
 
 import SignUp from './components/SignUp.jsx'
-import SignUpPage from './components/SignUpPage.jsx'
 
 import SignIn from './components/SignIn.jsx'
-import SignInPage from './components/SignInPage.jsx'
 
+import ShoppingCart from './components/Shopping-cart.jsx'
 import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
 
 
@@ -19,6 +18,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/shopping-cart" element={<ShoppingCart />}></Route>
       </Routes>
     </Router>
     </>

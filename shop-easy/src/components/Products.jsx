@@ -1,6 +1,9 @@
-import {React, useEffect, useState } from 'react'
+import {React, useEffect, useState, useContext } from 'react'
 import '../App.css'
+import { Link, useNavigate } from 'react-router-dom';
 import ProductBox from './Product-box.jsx'
+import { UserContext } from "./UserContext";
+import { ShoppingListContext } from "./ShoppingCartContext.jsx";
 
 //Products Types
 import Groceries from './Products/Groceries.jsx'
@@ -48,6 +51,8 @@ import sanitaryWater from '../images/Cleaning Products/sanitary_water.jpg'
 
 
 function Products(){
+  const navigate = useNavigate()
+
   let cleaningProductsUrl = [];
   let bakeryUrl = [];
   let meatsUrl = [];
@@ -57,6 +62,9 @@ function Products(){
 
   const [products, setProducts] = useState('groceries');
   const [productsList, setProductsList] = useState([]);
+
+  const { user, setUser } = useContext(UserContext);
+  const { shoppingList, setShoppingList} = useContext(ShoppingListContext)
 
   cleaningProductsUrl = [alcohol,detergent, soapDust, sanitaryWater]
   bakeryUrl = [chocolateCake, bread, cheeseBread, cookies]
@@ -69,10 +77,15 @@ function Products(){
     setProducts(param);
   }
 
-  function addProductToList(productName){
-    console.log("Produto: "+productName+" de ID : " +  " foi adicionado ao carrinho com sucesso!");
-    productsList.push(productName)
-    console.log(productsList);
+  function addProductToList(productName, productPrice){
+    if (user !== null){
+      console.log("Produto: "+productName+" de com preço : " + productPrice +  " foi adicionado ao carrinho com sucesso!");
+      productsList.push({productName, productPrice})
+      setShoppingList(productsList)
+      console.log(shoppingList);
+    }else {
+      navigate('/signin')
+    }
   }
 
   return <>
@@ -92,7 +105,14 @@ function Products(){
         {products === 'groceries' && (
           Object.entries(Groceries).map(([key, value],index) => {
             return <>
-              <ProductBox key={key} addProductToList={addProductToList} productName={key} productWeightType={value.weightType} productPrice={value.price} imageLink={groceriesUrl[index]}></ProductBox>
+              <ProductBox 
+              key={key} 
+              addProductToList={addProductToList} 
+              productName={key} 
+              productPrice={value.price}
+              productWeightType={value.weightType} 
+              imageLink={groceriesUrl[index]}> 
+              </ProductBox>
             </>
           }))}
 

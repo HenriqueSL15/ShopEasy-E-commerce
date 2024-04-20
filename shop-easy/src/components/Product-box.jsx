@@ -4,7 +4,7 @@ import '../App.css'
 function ProductBox({productName,productWeightType, productPrice, imageLink, addProductToList}){
   
   function addToCart(){
-    addProductToList(productName)
+    addProductToList(productName, productPrice)
   }
   
   return (

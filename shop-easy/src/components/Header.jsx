@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import '../App.css'
 import logo from '../images/SHOP.png'
+import shoppingCart from '../images/shopping-cart.png'
 import { Link } from 'react-router-dom';
 import { UserContext } from "./UserContext";
 
@@ -44,7 +45,10 @@ function Header(){
             <li><a href="#">Products</a></li>
           </ul>
         <div className='header-btns'>
-          <h1 className='userText'>Welcome, {user.email}</h1>
+          <Link to={"/shopping-cart"}>
+            <img className="shopping-cart" src={shoppingCart} alt="" />
+          </Link>
+
           <Link to={"/"} onClick={logOut} className='header-btn'>Logout</Link>
         </div>
       </nav>
