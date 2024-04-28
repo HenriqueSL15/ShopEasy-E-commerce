@@ -1,11 +1,16 @@
 import { React , useContext, useState, useEffect} from 'react'
 import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
-import { ShoppingListContext } from "./ShoppingCartContext.jsx";
-
+import { ShoppingListContext } from "./ShoppingCartContext.jsx"
 import Header from './Header';
+import { Link } from 'react-router-dom';
 
 import Contact from './Contact';
 function ShoppingCart() {
+
+  function removeProduct(index){
+    items.splice(index,1)
+    console.log(items)
+  }
 
   const tipos = [
     "Arroz Branco",
@@ -36,7 +41,7 @@ function ShoppingCart() {
 
   let i = 0
   const { shoppingList, setShoppingList} = useContext(ShoppingListContext)
-  const [ items, setItems] = useState([])
+  let [ items, setItems] = useState([])
   useEffect(() => {
     if (shoppingList !== null) {
       setItems(Object.values(shoppingList));
@@ -57,12 +62,15 @@ function ShoppingCart() {
                     <div className='cartItem text'>
                       <h1>{value.productName}</h1>
                       <h1>R${value.productPrice}</h1>
-                      <button>Remove</button>
+                      <button onClick={() => removeProduct(index)}>Remove</button>
                     </div>
                   </>
                 )
               })
             }
+          </div>
+          <div className='buyingOptions text'>
+            <h1>INFORMATION:</h1>
           </div>
         </div>
         <Contact></Contact>
@@ -73,8 +81,9 @@ function ShoppingCart() {
       <>
         <Header></Header>
         <div className="container">
-          <div className='cart'>
-
+          <div className='cart-centered'>
+            <h1 className='text'>There aren't any products.</h1>
+            <Link to={"/"} className='header-btn'>Go back to main page</Link>
           </div>
         </div>
         <Contact></Contact>
