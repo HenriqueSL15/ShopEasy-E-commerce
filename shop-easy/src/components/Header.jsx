@@ -2,14 +2,14 @@ import React, { useState, useContext } from 'react'
 import '../App.css'
 import logo from '../images/SHOP.png'
 import shoppingCart from '../images/shopping-cart.png'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { UserContext } from "./UserContext";
 
 function Header(){
   const { user, setUser } = useContext(UserContext);
   function logOut(){
     setUser(null);
-    window.location.reload();
+    Navigate('/')
   }
 
   if (user === null){

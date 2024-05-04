@@ -77,14 +77,19 @@ function Products(){
     setProducts(param);
   }
 
-  function addProductToList(productName, productPrice){
-    if (user !== null){
-      console.log("Produto: "+productName+" de com preço : " + productPrice +  " foi adicionado ao carrinho com sucesso!");
-      productsList.push({productName, productPrice})
-      setShoppingList(productsList)
-      console.log(shoppingList);
-    }else {
-      navigate('/signin')
+  function addProductToList(productName, productPrice) {
+    if (user !== null) {
+      console.log("Produto: " + productName + " foi adicionado ao carrinho!");
+  
+      // Criar uma nova lista em vez de modificar a existente
+      const updatedProductsList = [...shoppingList, { productName, productPrice }];
+  
+      // Atualizar o estado do contexto
+      setShoppingList(updatedProductsList); 
+  
+      console.log(updatedProductsList);
+    } else {
+      navigate('/signin');
     }
   }
 
