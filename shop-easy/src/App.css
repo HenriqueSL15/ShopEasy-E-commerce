@@ -24,10 +24,25 @@
     padding: 10px;
   }
 
+  .shopping-items{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .shopping-cart{
     width: 50px;
     margin-left: 0px;
     margin-right: 20px;
+  }
+
+  .shopping-list-number{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    color: white; 
+    font-size: 16px;
   }
 
   /* BOTÕES */

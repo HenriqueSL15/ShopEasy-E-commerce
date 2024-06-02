@@ -86,8 +86,6 @@ function Products({ id }){
   
       // Atualizar o estado do contexto
       setShoppingList(updatedProductsList); 
-  
-      console.log(updatedProductsList);
     } else {
       navigate('/signin');
     }

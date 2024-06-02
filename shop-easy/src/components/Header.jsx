@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext , useEffect} from 'react'
 import '../App.css'
 import logo from '../images/SHOP.png'
 import shoppingCart from '../images/shopping-cart.png'
@@ -7,13 +7,18 @@ import { UserContext } from "./UserContext";
 import { ShoppingListContext } from './ShoppingCartContext.jsx';
 
 function Header(){
-  const { shoppingList, setShoppingList } = useContext(ShoppingListContext) ;
+  let quantityOfProducts = 0;
+  const { shoppingList, setShoppingList } = useContext(ShoppingListContext);
   const { user, setUser } = useContext(UserContext);
   function logOut(){
     setUser(null);
     setShoppingList([]);
     Navigate('/');
   }
+  
+  shoppingList.forEach((a,b) => {
+    quantityOfProducts++
+  });
 
   function handleLinkClick(event, id) {
     event.preventDefault();
@@ -57,7 +62,13 @@ function Header(){
           </ul>
         <div className='header-btns'>
           <Link to={"/shopping-cart"}>
-            <img className="shopping-cart" src={shoppingCart} alt="" />
+            <div className='shopping-items'>
+              <img className="shopping-cart" src={shoppingCart} alt="" />
+              <span className='shopping-list-number' style={{
+                left: quantityOfProducts < 10 ? '42%' : '41%',
+                fontSize: '24px',
+                fontFamily: "PT Sans"}}>{quantityOfProducts}</span>
+            </div>
           </Link>
 
           <Link to={"/"} onClick={logOut} className='header-btn'>Logout</Link>
