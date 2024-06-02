@@ -9,9 +9,9 @@ function MainPage(){
   return(
     <>
       <Header></Header>
-      <About></About>
-      <Products></Products>
-      <Contact></Contact>
+      <About id={'about'}></About>
+      <Products id={'products'}></Products>
+      <Contact id={'contacts'}></Contact>
     </>
   )
 }

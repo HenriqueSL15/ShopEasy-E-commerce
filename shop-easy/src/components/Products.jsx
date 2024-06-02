@@ -50,7 +50,7 @@ import soapDust from '../images/Cleaning Products/soap_dust.jpg'
 import sanitaryWater from '../images/Cleaning Products/sanitary_water.jpg'
 
 
-function Products(){
+function Products({ id }){
   const navigate = useNavigate()
 
   let cleaningProductsUrl = [];
@@ -94,7 +94,7 @@ function Products(){
   }
 
   return <>
-    <nav className='products'>
+    <nav className='products' id={ id }>
       <div className='container-1'>
         <h1>Products</h1>
         <ul className='products-categories'>

@@ -2,9 +2,9 @@ import React from 'react'
 import '../App.css'
 import logo from '../images/SHOP.png'
 
-function Contact(){
+function Contact({ id }){
   return (
-    <nav className='contact'>
+    <nav className='contact' id={id}>
       <img src={logo} alt="logo" className='logo contact-logo'/>
       <div className='contact-info'>
         <h1 className='contact-link'>About Us</h1>

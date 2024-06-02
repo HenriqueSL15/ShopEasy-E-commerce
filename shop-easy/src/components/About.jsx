@@ -2,9 +2,9 @@ import React from 'react'
 import '../App.css'
 import peopleWorking from '../images/people-working.jpg';
 
-function About(){
+function About({ id }){
   return (
-    <nav className='about'>
+    <nav className='about' id={id}>
       <div className='left-site-about'>
         <h1 className='title'>About Us!</h1>
         <p className='description'>
