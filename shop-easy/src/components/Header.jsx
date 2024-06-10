@@ -56,9 +56,9 @@ function Header(){
         <img src={logo} alt="logo" className='logo'/>
         </Link>
           <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Products</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contacts">Contact</a></li>
+            <li><a href="/#products">Products</a></li>
           </ul>
         <div className='header-btns'>
           <Link to={"/shopping-cart"}>

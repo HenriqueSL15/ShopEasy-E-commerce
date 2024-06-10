@@ -21,9 +21,16 @@ const loadFromLocalStorage = (key) => {
 
 function ShoppingCart() {
   // Carrega a shoppingList do Local Storage
+  let somaInteira = 0
+  let somaDecimal = 0
+  let valorFinal = ''
   const initialShoppingList = loadFromLocalStorage('shoppingList'); // Garantir que seja um array
   const { shoppingList, setShoppingList } = useContext(ShoppingListContext);
   const [items, setItems] = useState(initialShoppingList || []);
+
+  function isDecimal(num) {
+    return num % 1 !== 0;
+  }
 
   // Efeito para persistir shoppingList no Local Storage
   useEffect(() => {
@@ -51,6 +58,26 @@ function ShoppingCart() {
     }
   };
 
+  shoppingList.forEach((object,indice) => {
+    const item1 = String(object.productPrice).split(",")[0]
+    const item2 = String(object.productPrice).split(",")[1]
+
+    somaDecimal += Number(item2)
+    somaInteira += Number(item1)
+  })
+
+  let conversao = somaDecimal / 100
+  somaInteira += conversao
+  somaDecimal = 0
+  console.log(somaInteira)
+  console.log(isDecimal(5.0))
+
+  if(!isDecimal(somaInteira)){
+    valorFinal = String(somaInteira).split(".")[0] + ",00"
+  }else{
+    valorFinal = String(somaInteira).split(".")[0] + "," + String(somaInteira).split(".")[1] + "0"
+  }
+
   return (
     <>
       <Header />
@@ -68,6 +95,8 @@ function ShoppingCart() {
             </div>
             <div className="buyingOptions text">
               <h1>INFORMATION:</h1>
+              <h3>Você está comprando {shoppingList.length} itens</h3>
+              <h3>O preço total da compra é de R${valorFinal}</h3>
             </div>
           </>
         ) : (
