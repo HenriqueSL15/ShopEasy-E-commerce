@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MainPage from './components/MainPage.jsx'
+import MainPage from './components/mainPage.jsx'
 
 import SignUp from './components/SignUp.jsx'
 
