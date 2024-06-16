@@ -11,7 +11,7 @@ function MainPage(){
       <Header></Header>
       <About id={'about'}></About>
       <Products id={'products'}></Products>
-      <Contact id={'contacts'}></Contact>
+      <Contact id={'contacts'}></Contact>    
     </>
   )
 }

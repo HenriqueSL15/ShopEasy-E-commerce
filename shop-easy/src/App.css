@@ -1,506 +1,717 @@
-  @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@300&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    padding: 0;
-    margin: 0;
-    overflow-y: scroll;
-  }
+body {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
 
+nav {
+  width: 97.75vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* CABEÇALHO */
+.header {
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  padding: 10px;
+}
+
+.shopping-items {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-cart {
+  width: 50px;
+  margin-left: 0px;
+  margin-right: 20px;
+}
+
+.shopping-list-number {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  color: white;
+  font-size: 16px;
+}
+
+/* BOTÕES */
+.header-btns {
+  width: 300px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.header-btn {
+  /*transform: scale(1.1);*/
+  background-color: rgb(239, 239, 239);
+  color: black;
+  margin: 0px 15px;
+  height: 25px;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+}
+
+.header-btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(239, 239, 239);
+}
+
+/* LOGO */
+.logo {
+  margin-left: 30px;
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* LISTA */
+nav ul {
+  list-style: none;
+  width: 74%;
+  text-align: right;
+  justify-content: end;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: purple;
+  transform: scale(1.001);
+}
+
+.userText {
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* SOBRE */
+.about {
+  margin: 30px 10px;
+  border-radius: 25px;
+  background-color: rgb(0, 0, 0);
+}
+
+.about img {
+  border-radius: 25px;
+}
+
+.left-site-about {
+  margin: 50px;
+  width: 50vw;
+}
+
+.right-site-about {
+  margin: 50px;
+  width: 50vw;
+}
+
+.title {
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+}
+
+.description {
+  color: white;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* CONTACT */
+.contact {
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+}
+
+.contact-list {
+  width: 350px;
+  text-align: start;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+}
+
+.contact-info h1 {
+  margin: 0px 15px;
+  transition: color 0.4s;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-info .contact-link:hover {
+  cursor: pointer;
+  color: purple;
+}
+
+.contact-list h1 {
+  margin: 25px 0px;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.contact-logo {
+  width: 80px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 20px;
+  margin: 0px 40px;
+}
+
+/* PRODUCTS */
+.container-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-1 h1 {
+  margin-left: 55px;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 40px;
+  margin-right: 50px;
+}
+
+.products .container-2 h1 {
+  margin-left: 10px;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 25px;
+  margin-right: 30px;
+  margin-bottom: 0px;
+}
+
+.products ul {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.products-categories button {
+  background-color: white;
+  border: none;
+  width: 200px;
+  padding: 15px 0px;
+  padding-bottom: 40px;
+  margin: 0px;
+  height: 25px;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.products-categories button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product-box {
+  width: 30.8%;
+  margin: 30px 14px;
+  box-shadow: 0px 0px 10px #88888846;
+  border-radius: 15px;
+  transition: transform 0.4s;
+}
+
+.product-box .container-2 {
+  margin: 0px 30px;
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-name {
+  text-align: center;
+  font-style: italic;
+}
+
+.product-description {
+  text-align: center;
+  font-size: 18px;
+}
+
+.product-image {
+  height: 160px;
+}
+
+.product-price {
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+}
+
+.product-box:hover {
+  transform: scale(1.05);
+}
+
+.btn {
+  background-color: purple;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  margin: 0px 3px;
+  transition: background-color 0.4s, transform 0.4s;
+  font-size: 11.6px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: darkblue;
+  transform: scale(1.05);
+}
+
+/* Sign Up Page */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.signUpForm, .signInForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 60px); /* Subtract header height */
+  width: 450px;
+  height: 575px;
+  box-shadow: 0px 0px 10px #88888846;
+  border-radius: 25px;
+}
+
+.signUpForm .title, .signInForm .title {
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  color: black;
+  text-decoration: underline;
+}
+
+.subTitles {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 32px;
+  font-family: "Reddit Mono";
+  font-weight: 300;
+}
+
+.input {
+  border: none;
+  border-radius: 25px;
+  padding: 0px 10px;
+  background-color: rgb(229, 226, 226);
+  line-height: 30px;
+}
+
+.signUpButton, .signInButton {
+  font-size: 25px;
+  border: none;
+  margin: 15px 0px;
+  border-radius: 25px;
+  padding: 10px;
+  transition: color 0.3s, background-color 0.3s;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.signUpButton:hover, .signInButton:hover {
+  color: white;
+  background-color: black;
+}
+
+.alternateButton {
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  margin: 10px 0px;
+  border-radius: 25px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.alternateButton:hover {
+  color: black;
+  background-color: rgb(202, 202, 202);
+}
+
+.text {
+  font-family: "Reddit Mono";
+  font-weight: 300;
+  padding-left: 20px;
+}
+
+/* CARRINHO */
+.cart {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  height: calc(100vh - 60px); /* Subtract header height */
+  width: 600px;
+  height: auto;
+  min-height: 550px;
+  box-shadow: 0px 0px 10px #88888846;
+  border-radius: 25px;
+}
+
+.buyingOptions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  height: calc(100vh - 60px); /* Subtract header height */
+  width: 600px;
+  height: auto;
+  min-height: 550px;
+  box-shadow: 0px 0px 10px #88888846;
+  border-radius: 25px;
+}
+
+.cart-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 60px); /* Subtract header height */
+  width: 1200px;
+  height: auto;
+  min-height: 550px;
+  box-shadow: 0px 0px 10px #88888846;
+  border-radius: 25px;
+}
+
+.cartItem {
+  background-color: rgb(0, 0, 0);
+  height: 100px;
+  width: 92%;
+  margin: 10px;
+  border-radius: 25px;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.cartItem:hover {
+  color: purple;
+}
+
+.cartItem button {
+  background-color: white;
+  border: none;
+  width: 200px;
+  padding: 15px 0px;
+  padding-bottom: 40px;
+  margin: 0px;
+  height: 25px;
+  text-align: center;
+  transition: backgroun-color 0.4s, color 0.4s;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 25px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.cartItem button:hover {
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+}
+
+/* Media Queries */
+@media (max-width: 1300px) {
   nav{
-    width: 97.75vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 95vw;
+  }
+  .cart-centered {
+    width: 100%;
   }
 
-  /* CABEÇALHO */
-  .header{
-    height: 80px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: white;
-    padding:10px;
-  }
-
-  .shopping-items{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .shopping-cart{
-    width: 50px;
-    margin-left: 0px;
-    margin-right: 20px;
-  }
-
-  .shopping-list-number{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 40%;
-    color: white; 
-    font-size: 16px;
-  }
-
-  /* BOTÕES */
-  .header-btns{
-    width: 300px;
-    margin-right: 30px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
-
-  .header-btn{
-    /*transform: scale(1.1);*/
-    background-color: rgb(239, 239, 239);
-    color: black;
-    margin: 0px 15px;
-    height: 25px;
-    padding: 8px;
-    font-size: 18px;
-    border-radius: 7px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    font-family: "PT Sans", sans-serif;
-    font-weight: bold; 
-  }
-
-  .header-btn:hover{
-    background-color: rgb(0, 0, 0);
-    color: rgb(239, 239, 239);
-  }
-
-  /* LOGO */
-  .logo{
-    margin-left: 30px;
-    width: 100px;
-    cursor: pointer;
-    transition: transform 0.4s;
-  }
-
-  .logo:hover{
-    transform: scale(1.05);
-  }
-
-  /* LISTA */
-  nav ul{
-    list-style: none;
-    width: 74%;
-    text-align: right;
-    justify-content: end;
-  }
-
-  nav ul li{
-    display: inline-block;
-    margin: 10px 20px;
-  }
-
-  nav ul li a{
-    font-family: "Reddit Mono";
-    font-weight: 300;
-    font-size: 25px;
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  nav ul li a:hover{
-    color: purple;
-    transform: scale(1.001);
-  }
-
-  .userText {
-    font-family: "Reddit Mono";
-    font-weight: 300;
-    font-size: 25px;
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  /* SOBRE */
-
-  .about{
-    margin: 30px 10px;
-    border-radius: 25px;
-    background-color: rgb(0, 0, 0);
-  }
-
-  .about img{
-    border-radius: 25px;
-  }
-
-  .left-site-about{
-    margin: 50px;
-    width: 50vw;
-  }
-
-  .right-site-about{
-    margin: 50px;
-    width: 50vw;
-  }
-
-  .title{
-    color: white;
-    font-family: "PT Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-    justify-content: center;
-    font-size: 60px;
-  }
-
-  .description{
-    color: white;
-    font-family: "Reddit Mono";
-    font-weight: 300;
-    font-size: 20px;
-  }
-
-  /* CONTACT */
-
-  .contact{
-    height: 250px;
-    background-color: rgb(255, 255, 255);
-  }
-
-  .contact-list{
-    width: 350px;
-    text-align: start;
-    font-family: "Reddit Mono";
-    font-weight: 300;
-  }
-
-  .contact-info{
-    display: flex;
-    align-items: center;
-    font-family: "Reddit Mono";
-    font-weight: 300;
-  }
-
-  .contact-info h1{
-    margin: 0px 15px;
-    transition: color 0.4s;
-  }
-
-  .contact-info a{
-    text-decoration: none;
-    color: black;
-  }
-
-  .contact-info .contact-link:hover{
-    cursor: pointer;
-    color: purple;
-  }
-
-  .contact-list h1{
-    margin: 25px 0px;
-    text-align: center;
-    font-family: "PT Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .contact-logo{
-    width: 80px;
-    border-style: solid;
-    border-width: 10px;
-    border-color: white;
-    border-radius: 20px;
-    margin: 0px 40px;
-  }
-
-  /* PRODUCTS */
-
-  .container-1{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .container-1 h1{
-    margin-left: 55px;
-    font-family: "Reddit Mono";
-    font-weight: 300;
-    font-size: 40px;
-    margin-right: 50px;
-  }
-
-  .products .container-2 h1{
-    margin-left: 10px;
-    font-family: "Reddit Mono";
-    font-weight: 300;
-    font-size: 25px;
-    margin-right: 30px;
-    margin-bottom: 0px;
-  }
-
-  .products ul{
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-  }
-
-  .products-categories button{
-    background-color: white;
-    border: none;
-    width: 200px;
-    padding: 15px 0px;
-    padding-bottom: 40px;
-    margin: 0px;
-    height: 25px;
-    text-align: center;
-    transition: background-color 0.4s, color 0.4s;
-    font-family: "PT Sans", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .products-categories button:hover{
-    cursor: pointer;
-    background-color: black;
-    color: white;  
-  }
-
-  .row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .btn {
+    font-size: 11.6px;
   }
 
   .product-box{
-    width: 30.8%;
-    margin: 30px 14px;
-    box-shadow: 0px 0px 10px #88888846;
-    border-radius: 15px;
-    transition: transform 0.4s;
+    width: 25vw;
+    height: 50vh;
   }
+}
 
-  .product-box .container-2{
-    margin: 0px 30px;
-    width: 300px;
-    height: 350px;
-    display: flex;
+@media (max-width: 1200px) {
+  .header-btns {
+    width: auto;
     flex-direction: column;
+    gap: 5px;
+  }
+
+  .header-btn{
+    width: 70%;
+  }
+
+  nav {
+    width: 95vw;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
-  .product-name{
+  nav ul li {
+    margin: 10px 10px;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .left-site-about, .right-site-about {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
     text-align: center;
-    font-style: italic;
+    width: 100%;  
+    margin: 30px 0px;
   }
 
-  .product-description{
-    text-align: center;
-    font-size: 18px;
+  .right-site-about img{
+    width: 80%;
+    max-width: 600px;
+    height: auto;
   }
 
-  .product-image{
-    height: 160px;
+  .container {
+    width: 90%;
   }
 
-  .product-price{
-    font-family: "Reddit Mono";
-    font-weight: 300;
-    font-size: 25px;
-    padding: 5px;
-    border-radius: 15px;
-    background-color: black;
-    color: white;
+  .cart, .buyingOptions {
+    width: 100%;
+    margin-left: 0;
   }
 
-  .product-box:hover{
-    transform: scale(1.05);
+  .product-box {
+    width: 40%;
+    margin: 20px 20px;
+    height: 50vh;
   }
 
   .btn{
-    background-color: purple;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    margin: 0px 3px;
-    transition: background-color 0.4s, transform 0.4s;
-    font-size: 14px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 999px){
+  .products{
+    flex-direction: column;
   }
 
-  .btn:hover{
-    cursor: pointer;
-    background-color: darkblue;
-    transform: scale(1.05);
+  .product-box {
+    width: 40%;
+    margin: 20px 20px;
+    height: 50vh;
   }
-
-  /* Sign Up Page */
-
-  .container{
-    display: flex;
+  .container-1{
     justify-content: center;
   }
 
-  .signUpForm, .signInForm {
-    display: flex;
+  .container-2{
     justify-content: center;
+  }
+
+  .product-btns{
+    flex-direction: column;
     align-items: center;
-    flex-direction: column;
-    height: calc(100vh - 60px); /* Subtract header height */ 
-    width: 450px;
-    height: 575px;
-    box-shadow: 0px 0px 10px #88888846;
-    border-radius: 25px;
   }
 
-  .signUpForm .title, .signInForm .title{
-    text-align: center;
-    font-family: "PT Sans", sans-serif;
-    color: black;
-    text-decoration:underline;
+  .btn{
+    font-size: 11.79px;
+  }
+}
+
+@media (max-width: 780px) {
+  .logo {
+    width: 80px;
   }
 
-  .subTitles{
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 32px;
-    font-family: "Reddit Mono";
-    font-weight: 300;
+  nav{
+    width: 94vw;
   }
 
-  .input{
-    border: none;
-    border-radius: 25px;
-    padding: 0px 10px;
-    background-color: rgb(229, 226, 226);
-    line-height: 30px;
+  .header-btns{
+    width:20vw;
   }
 
-  .signUpButton, .signInButton{
-    font-size: 25px;
-    border: none;
-    margin: 15px 0px;
-    border-radius: 25px;
-    padding: 10px;
-    transition: color 0.3s, background-color 0.3s;
-    margin-bottom: 15px;
-    cursor: pointer;
+  .contact {
+    flex-direction: column; /* Altera para uma coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    padding: 10px; /* Ajusta o espaçamento */
   }
 
-  .signUpButton:hover, .signInButton:hover{
-    color: white;
-    background-color: black;
+  nav ul li a, .userText {
+    font-size: 18px;
   }
 
-  .alternateButton{
-    cursor: pointer;
-    font-size: 15px;
-    border: none;
-    margin: 10px 0px;
-    border-radius: 25px;
-    padding: 10px;
-    color: white;
-    background-color: black;
-    transition: color 0.3s, background-color 0.3s;
-  }
-
-  .alternateButton:hover{
-    color: black;
-    background-color: rgb(202, 202, 202);
-  }
-
-  .text{
-    font-family: "Reddit Mono";
-    font-weight: 300;
-    padding-left: 20px;
-  }
-
-  /* CARRINHO */
-
-  .cart{
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    height: calc(100vh - 60px); /* Subtract header height */ 
-    width: 600px;
-    height: auto;
-    min-height: 550px;
-    box-shadow: 0px 0px 10px #88888846;
-    border-radius: 25px;
-  }
-
-  .buyingOptions{
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-    height: calc(100vh - 60px); /* Subtract header height */ 
-    width: 600px;
-    height: auto;
-    min-height: 550px;
-    box-shadow: 0px 0px 10px #88888846;
-    border-radius: 25px;
-  }
-
-  .cart-centered{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: calc(100vh - 60px); /* Subtract header height */ 
-    width: 1200px;
-    height: auto;
-    min-height: 550px;
-    box-shadow: 0px 0px 10px #88888846;
-    border-radius: 25px;
-  }
-
-  .cartItem{
-    background-color: rgb(0, 0, 0);
-    height: 100px;
-    width: 92%;
-    margin: 10px;
-    border-radius: 25px;
-    padding: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 15px;
-    color: white;
-    cursor: pointer;
-    transition: color 0.15s;
-  }
-
-  .cartItem:hover{
-    color: purple;
-  }
-
-  .cartItem button {
-    background-color: white;
-    border: none;
-    width: 200px;
-    padding: 15px 0px;
-    padding-bottom: 40px;
-    margin: 0px;
-    height: 25px;
-    text-align: center;
-    transition: backgroun-color 0.4s, color 0.4s;
-    font-family: "PT Sans", sans-serif;
+  .container-1 h1, .products .container-2 h1 {
     font-size: 20px;
-    font-weight: 400;
-    border-radius: 25px;
-    transition: background-color 0.2s, color 0.2s;
   }
 
-.cartItem button:hover{
-  cursor: pointer;
-  background-color: purple;
-  color: white;  
+  .container-1 h1{
+    font-size: 40px;
+  }
+
+  .product-box{
+    margin-bottom: 50px;
+    height: auto;
+  }
+
+  .product-price {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  #root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-btns {
+    flex-direction: column;
+    width: 45vw;
+    margin-right: 10px;
+  }
+
+  .header ul{
+    flex-direction: column;
+    padding: 0px;
+    margin-bottom: 15px;
+  }
+
+  .header{
+    height: 15vh;
+  }
+
+  nav{
+    width: 90vw;
+  }
+
+  .header-btn {
+    margin: 5px 0;
+  }
+
+  .contact{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info{
+    flex-direction: column;
+  }
+
+  .contact-list{
+    width: 85vw;
+  }
+
+  .container-2{
+    width: 50vw;
+  }
+  
+  .contact-list ul h1{
+    width: 90vw;
+  }
+
+  .product-box{
+    width: 90%;
+    scale: 0.9;
+  }
+
+  .container-2{
+    flex-direction: column;
+  }
 }
