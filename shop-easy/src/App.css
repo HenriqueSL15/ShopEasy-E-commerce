@@ -500,6 +500,27 @@ nav ul li a:hover {
   color: white;
 }
 
+.buttons{
+  display: flex;
+  margin: 0 auto;
+  gap: 3vw;
+}
+
+.buttonsOption{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  width: 10vw;
+  text-align: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: background-color 0.2s;
+}
+
+.buttonsOption:hover{
+  background-color: rgb(177, 0, 177);
+}
+
 /* Media Queries */
 @media (max-width: 1300px) {
   nav{

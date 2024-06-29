@@ -69,8 +69,6 @@ function ShoppingCart() {
   let conversao = somaDecimal / 100
   somaInteira += conversao
   somaDecimal = 0
-  console.log(somaInteira)
-  console.log(isDecimal(5.0))
 
   if(!isDecimal(somaInteira)){
     valorFinal = String(somaInteira).split(".")[0] + ",00"
@@ -95,8 +93,16 @@ function ShoppingCart() {
             </div>
             <div className="buyingOptions text">
               <h1>INFORMATION:</h1>
-              <h3>Você está comprando {shoppingList.length} itens</h3>
-              <h3>O preço total da compra é de R${valorFinal}</h3>
+              <h3>You are buying {shoppingList.length} items</h3>
+              <h3>The total price of all the items is R${valorFinal}</h3>
+              <div className='buttons'>
+                <Link to="/payment" className='buttonsOption'>
+                  <p>In cash</p>
+                </Link>
+                <Link to="/payment" className='buttonsOption'>
+                  <p>In installments</p>
+                </Link>
+              </div>
             </div>
           </>
         ) : (
