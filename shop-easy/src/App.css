@@ -69,7 +69,7 @@ nav {
   border-radius: 7px;
   cursor: pointer;
   border: none;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s;
   text-decoration: none;
   font-family: "PT Sans", sans-serif;
   font-weight: bold;
@@ -85,7 +85,7 @@ nav {
   margin-left: 30px;
   width: 100px;
   cursor: pointer;
-  transition: transform 0.4s;
+  transition: all 0.4s;
 }
 
 .logo:hover {
@@ -111,7 +111,7 @@ nav ul li a {
   font-size: 25px;
   color: black;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: all 0.3Ss;
 }
 
 nav ul li a:hover {
@@ -125,7 +125,7 @@ nav ul li a:hover {
   font-size: 25px;
   color: black;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
 
 /* SOBRE */
@@ -188,7 +188,7 @@ nav ul li a:hover {
 
 .contact-info h1 {
   margin: 0px 15px;
-  transition: color 0.4s;
+  transition: all 0.4s;
 }
 
 .contact-info a {
@@ -256,7 +256,7 @@ nav ul li a:hover {
   margin: 0px;
   height: 25px;
   text-align: center;
-  transition: background-color 0.4s, color 0.4s;
+  transition: all 0.4s;
   font-family: "PT Sans", sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -280,7 +280,7 @@ nav ul li a:hover {
   margin: 30px 14px;
   box-shadow: 0px 0px 10px #88888846;
   border-radius: 15px;
-  transition: transform 0.4s;
+  transition: all 0.4s;
 }
 
 .product-box .container-2 {
@@ -327,7 +327,7 @@ nav ul li a:hover {
   border: none;
   border-radius: 15px;
   margin: 0px 3px;
-  transition: background-color 0.4s, transform 0.4s;
+  transition: all 0.4s;
   font-size: 11.6px;
 }
 
@@ -336,6 +336,11 @@ nav ul li a:hover {
   background-color: darkblue;
   transform: scale(1.05);
 }
+
+.btn:active{
+  transform: scale(0.8);
+}
+
 
 /* Sign Up Page */
 .container {
@@ -384,7 +389,7 @@ nav ul li a:hover {
   margin: 15px 0px;
   border-radius: 25px;
   padding: 10px;
-  transition: color 0.3s, background-color 0.3s;
+  transition: all 0.3s;
   margin-bottom: 15px;
   cursor: pointer;
 }
@@ -392,6 +397,10 @@ nav ul li a:hover {
 .signUpButton:hover, .signInButton:hover {
   color: white;
   background-color: black;
+}
+
+.signUpButton:active, .signinButton:active{
+  transform: scale(0.8);
 }
 
 .alternateButton {
@@ -403,12 +412,16 @@ nav ul li a:hover {
   padding: 10px;
   color: white;
   background-color: black;
-  transition: color 0.3s, background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .alternateButton:hover {
   color: black;
   background-color: rgb(202, 202, 202);
+}
+
+.alternateButton:active{
+  transform: scale(0.8);
 }
 
 .text {
@@ -426,7 +439,7 @@ nav ul li a:hover {
   height: calc(100vh - 60px); /* Subtract header height */
   width: 600px;
   height: auto;
-  min-height: 550px;
+  min-height: 650px;
   box-shadow: 0px 0px 10px #88888846;
   border-radius: 25px;
 }
@@ -470,7 +483,7 @@ nav ul li a:hover {
   font-size: 15px;
   color: white;
   cursor: pointer;
-  transition: color 0.15s;
+  transition: all 0.15s;
 }
 
 .cartItem:hover {
@@ -486,18 +499,22 @@ nav ul li a:hover {
   margin: 0px;
   height: 25px;
   text-align: center;
-  transition: backgroun-color 0.4s, color 0.4s;
+  transition: all 0.4s;
   font-family: "PT Sans", sans-serif;
   font-size: 20px;
   font-weight: 400;
   border-radius: 25px;
-  transition: background-color 0.2s, color 0.2s;
+  transition: all 0.2s;
 }
 
 .cartItem button:hover {
   cursor: pointer;
   background-color: purple;
   color: white;
+}
+
+.cartItem button:active{
+  transform: scale(0.8);
 }
 
 .buttons{
@@ -508,17 +525,99 @@ nav ul li a:hover {
 
 .buttonsOption{
   background-color: black;
+  font-family: "PT Sans", sans-serif;
+  border: none;
   color: white;
   text-decoration: none;
   width: 10vw;
   text-align: center;
   align-items: center;
   border-radius: 50px;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
+  font-size: 15px;
 }
 
 .buttonsOption:hover{
   background-color: rgb(177, 0, 177);
+  cursor: pointer;
+}
+
+.buttonsOption:active{
+  transform: scale(0.8);
+}
+
+.popup{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 51vw;
+  top: 45vh;
+  background-color: black;
+  border-radius: 8px;
+  padding: 30px;
+  align-items: center;
+  height: 30vh;
+  width: 540px;
+  z-index: -1;
+  transform: scale(0.4);
+  opacity: 0;
+}
+
+.popup.opened{
+  z-index: 1;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.blur{
+  
+}
+
+.popup-title{
+  color: white;
+}
+
+#paymentTimes{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="black" stroke-width="2" d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  margin: 25px;
+  width: 50%;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 25px;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+#paymentTimes option{
+  font-size: 20px;
+}
+
+.close-popup{
+  padding: 10px;
+  width: 150px;
+  border:none;
+  border-radius: 25px;
+  color: black;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.close-popup:hover{
+  background-color: purple;
+  color: white;
+}
+
+.close-popup:active{
+  transform: scale(0.8);
 }
 
 /* Media Queries */

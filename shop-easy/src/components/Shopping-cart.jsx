@@ -21,6 +21,7 @@ const loadFromLocalStorage = (key) => {
 
 function ShoppingCart() {
   // Carrega a shoppingList do Local Storage
+  const popup = document.getElementById('popup')
   let somaInteira = 0
   let somaDecimal = 0
   let valorFinal = ''
@@ -28,6 +29,16 @@ function ShoppingCart() {
   const { shoppingList, setShoppingList } = useContext(ShoppingListContext);
   const [items, setItems] = useState(initialShoppingList || []);
 
+  function handlePopup(open){
+    if (popup){
+      if (open){
+        popup.classList.add('opened')
+      }else{
+        popup.classList.remove('opened')
+      }
+    }
+  }
+  
   function isDecimal(num) {
     return num % 1 !== 0;
   }
@@ -96,12 +107,24 @@ function ShoppingCart() {
               <h3>You are buying {shoppingList.length} items</h3>
               <h3>The total price of all the items is R${valorFinal}</h3>
               <div className='buttons'>
-                <Link to="/payment" className='buttonsOption'>
+                <button className='buttonsOption'>
                   <p>In cash</p>
-                </Link>
-                <Link to="/payment" className='buttonsOption'>
+                </button>
+                <button className='buttonsOption' onClick={() => handlePopup(true)}>
                   <p>In installments</p>
-                </Link>
+                </button>
+                <div className='popup opened' id='popup'>
+                  <h1 className='popup-title'>In how many times do you want to pay?</h1>
+                  <select id="paymentTimes">
+                    <option value="2">2 Times</option>
+                    <option value="3">3 Times</option>
+                    <option value="4">4 Times</option>
+                    <option value="5">5 Times</option>
+                    <option value="6">6 Times</option>
+                    <option value="7">7 Times</option>
+                  </select>
+                  <button className='close-popup' type='submit' onClick={() => handlePopup(false)}>Confirm</button>
+                </div>
               </div>
             </div>
           </>
