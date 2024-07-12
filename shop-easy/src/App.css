@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -337,10 +337,9 @@ nav ul li a:hover {
   transform: scale(1.05);
 }
 
-.btn:active{
+.btn:active {
   transform: scale(0.8);
 }
-
 
 /* Sign Up Page */
 .container {
@@ -348,7 +347,8 @@ nav ul li a:hover {
   justify-content: center;
 }
 
-.signUpForm, .signInForm {
+.signUpForm,
+.signInForm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,7 +360,8 @@ nav ul li a:hover {
   border-radius: 25px;
 }
 
-.signUpForm .title, .signInForm .title {
+.signUpForm .title,
+.signInForm .title {
   text-align: center;
   font-family: "PT Sans", sans-serif;
   color: black;
@@ -383,7 +384,8 @@ nav ul li a:hover {
   line-height: 30px;
 }
 
-.signUpButton, .signInButton {
+.signUpButton,
+.signInButton {
   font-size: 25px;
   border: none;
   margin: 15px 0px;
@@ -394,12 +396,14 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-.signUpButton:hover, .signInButton:hover {
+.signUpButton:hover,
+.signInButton:hover {
   color: white;
   background-color: black;
 }
 
-.signUpButton:active, .signinButton:active{
+.signUpButton:active,
+.signinButton:active {
   transform: scale(0.8);
 }
 
@@ -420,7 +424,7 @@ nav ul li a:hover {
   background-color: rgb(202, 202, 202);
 }
 
-.alternateButton:active{
+.alternateButton:active {
   transform: scale(0.8);
 }
 
@@ -513,17 +517,17 @@ nav ul li a:hover {
   color: white;
 }
 
-.cartItem button:active{
+.cartItem button:active {
   transform: scale(0.8);
 }
 
-.buttons{
+.buttons {
   display: flex;
   margin: 0 auto;
   gap: 3vw;
 }
 
-.buttonsOption{
+.buttonsOption {
   background-color: black;
   font-family: "PT Sans", sans-serif;
   border: none;
@@ -537,16 +541,16 @@ nav ul li a:hover {
   font-size: 15px;
 }
 
-.buttonsOption:hover{
+.buttonsOption:hover {
   background-color: rgb(177, 0, 177);
   cursor: pointer;
 }
 
-.buttonsOption:active{
+.buttonsOption:active {
   transform: scale(0.8);
 }
 
-.popup{
+.popup {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -563,21 +567,17 @@ nav ul li a:hover {
   opacity: 0;
 }
 
-.popup.opened{
+.popup.opened {
   z-index: 1;
   transform: scale(1);
   opacity: 1;
 }
 
-.blur{
-  
-}
-
-.popup-title{
+.popup-title {
   color: white;
 }
 
-#paymentTimes{
+#paymentTimes {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -595,14 +595,14 @@ nav ul li a:hover {
   border: none;
 }
 
-#paymentTimes option{
+#paymentTimes option {
   font-size: 20px;
 }
 
-.close-popup{
+.close-popup {
   padding: 10px;
   width: 150px;
-  border:none;
+  border: none;
   border-radius: 25px;
   color: black;
   font-family: "PT Sans", sans-serif;
@@ -611,18 +611,24 @@ nav ul li a:hover {
   transition: all 0.4s;
 }
 
-.close-popup:hover{
+.close-popup:hover {
   background-color: purple;
   color: white;
 }
 
-.close-popup:active{
+.close-popup:active {
   transform: scale(0.8);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* Media Queries */
 @media (max-width: 1300px) {
-  nav{
+  nav {
     width: 95vw;
   }
   .cart-centered {
@@ -633,7 +639,7 @@ nav ul li a:hover {
     font-size: 11.6px;
   }
 
-  .product-box{
+  .product-box {
     width: 25vw;
     height: 50vh;
   }
@@ -646,7 +652,7 @@ nav ul li a:hover {
     gap: 5px;
   }
 
-  .header-btn{
+  .header-btn {
     width: 70%;
   }
 
@@ -665,17 +671,18 @@ nav ul li a:hover {
     flex-direction: column;
   }
 
-  .left-site-about, .right-site-about {
+  .left-site-about,
+  .right-site-about {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100%;  
+    width: 100%;
     margin: 30px 0px;
   }
 
-  .right-site-about img{
+  .right-site-about img {
     width: 80%;
     max-width: 600px;
     height: auto;
@@ -685,7 +692,8 @@ nav ul li a:hover {
     width: 90%;
   }
 
-  .cart, .buyingOptions {
+  .cart,
+  .buyingOptions {
     width: 100%;
     margin-left: 0;
   }
@@ -696,13 +704,13 @@ nav ul li a:hover {
     height: 50vh;
   }
 
-  .btn{
+  .btn {
     font-size: 10px;
   }
 }
 
-@media (max-width: 999px){
-  .products{
+@media (max-width: 999px) {
+  .products {
     flex-direction: column;
   }
 
@@ -711,20 +719,20 @@ nav ul li a:hover {
     margin: 20px 20px;
     height: 50vh;
   }
-  .container-1{
+  .container-1 {
     justify-content: center;
   }
 
-  .container-2{
+  .container-2 {
     justify-content: center;
   }
 
-  .product-btns{
+  .product-btns {
     flex-direction: column;
     align-items: center;
   }
 
-  .btn{
+  .btn {
     font-size: 11.79px;
   }
 }
@@ -734,12 +742,12 @@ nav ul li a:hover {
     width: 80px;
   }
 
-  nav{
+  nav {
     width: 94vw;
   }
 
-  .header-btns{
-    width:20vw;
+  .header-btns {
+    width: 20vw;
   }
 
   .contact {
@@ -748,19 +756,21 @@ nav ul li a:hover {
     padding: 10px; /* Ajusta o espaçamento */
   }
 
-  nav ul li a, .userText {
+  nav ul li a,
+  .userText {
     font-size: 18px;
   }
 
-  .container-1 h1, .products .container-2 h1 {
+  .container-1 h1,
+  .products .container-2 h1 {
     font-size: 20px;
   }
 
-  .container-1 h1{
+  .container-1 h1 {
     font-size: 40px;
   }
 
-  .product-box{
+  .product-box {
     margin-bottom: 50px;
     height: auto;
   }
@@ -775,7 +785,7 @@ nav ul li a:hover {
 }
 
 @media (max-width: 600px) {
-  #root{
+  #root {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -787,17 +797,17 @@ nav ul li a:hover {
     margin-right: 10px;
   }
 
-  .header ul{
+  .header ul {
     flex-direction: column;
     padding: 0px;
     margin-bottom: 15px;
   }
 
-  .header{
+  .header {
     height: 15vh;
   }
 
-  nav{
+  nav {
     width: 90vw;
   }
 
@@ -805,33 +815,33 @@ nav ul li a:hover {
     margin: 5px 0;
   }
 
-  .contact{
+  .contact {
     flex-direction: column;
     align-items: center;
   }
 
-  .contact-info{
+  .contact-info {
     flex-direction: column;
   }
 
-  .contact-list{
+  .contact-list {
     width: 85vw;
   }
 
-  .container-2{
+  .container-2 {
     width: 50vw;
   }
-  
-  .contact-list ul h1{
+
+  .contact-list ul h1 {
     width: 90vw;
   }
 
-  .product-box{
+  .product-box {
     width: 90%;
     scale: 0.9;
   }
 
-  .container-2{
+  .container-2 {
     flex-direction: column;
   }
 }
