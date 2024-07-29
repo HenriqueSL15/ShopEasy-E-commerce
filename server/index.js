@@ -37,8 +37,13 @@ app.post("/signup", async (req, res) => {
   try {
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const defaultMoney = 100;
 
-    const user = { email: req.body.email, password: hashedPassword };
+    const user = {
+      email: req.body.email,
+      password: hashedPassword,
+      money: defaultMoney,
+    };
 
     UserModel.create(user)
       .then((users) => res.json(users))

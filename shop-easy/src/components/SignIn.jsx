@@ -1,17 +1,17 @@
-import '../App.css'
+import "../App.css";
 
-import Header from './Header.jsx'
-import Contact from './Contact.jsx'
-import SignInPage from './SignInPage.jsx'
+import Header from "./Header.jsx";
+import Contact from "./Contact.jsx";
+import SignInPage from "./SignInPage.jsx";
 
-function SignUp(){
-  return(
+function SignUp() {
+  return (
     <>
       <Header></Header>
-        <SignInPage></SignInPage>
+      <SignInPage></SignInPage>
       <Contact></Contact>
     </>
-  )
+  );
 }
 
 export default SignUp;

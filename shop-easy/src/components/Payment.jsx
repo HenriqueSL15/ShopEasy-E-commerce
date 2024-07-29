@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingListContext } from "./ShoppingCartContext.jsx";
+import { UserContext } from "./UserContext.jsx";
 import Header from "./Header.jsx";
 import Contact from "./Contact.jsx";
 
@@ -22,8 +23,10 @@ import Contact from "./Contact.jsx";
 function Payment() {
   const location = useLocation();
   const { times, valor } = location.state || {};
-  console.log(valor);
+  const { user, setUser } = useContext(UserContext);
 
+  console.log(user);
+  // console.log(setUser());
   // Carrega a shoppingList do Local Storage
   return (
     <>
