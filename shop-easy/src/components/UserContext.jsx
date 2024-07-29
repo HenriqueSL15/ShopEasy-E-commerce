@@ -18,14 +18,22 @@ const UserProvider = ({ children }) => {
   // Inicializa o estado do usuário com dados do Local Storage
   const [user, setUser] = useState(loadFromLocalStorage("loggedUser"));
 
-  // UseEffect para salvar o estado do usuário no Local Storage quando ele muda
   useEffect(() => {
+    const storedUser = loadFromLocalStorage("loggedUser");
+
     if (user) {
-      saveToLocalStorage("loggedUser", user); // Persistir se o usuário estiver logado
-    } else {
-      localStorage.removeItem("loggedUser"); // Remover do Local Storage se o usuário fizer logout
+      if (!storedUser) {
+        console.log("Salvando pela primeira vez");
+        saveToLocalStorage("loggedUser", user);
+      } else if (user._id !== storedUser._id) {
+        console.log("Salvando");
+        saveToLocalStorage("loggedUser", user);
+      }
+    } else if (storedUser) {
+      console.log("Retirando");
+      localStorage.removeItem("loggedUser");
     }
-  }, [user]); // O efeito é acionado quando `user` muda
+  }, [user]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

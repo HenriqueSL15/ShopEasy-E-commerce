@@ -37,12 +37,11 @@ app.post("/signup", async (req, res) => {
   try {
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    const defaultMoney = 100;
 
     const user = {
       email: req.body.email,
       password: hashedPassword,
-      money: defaultMoney,
+      money: 100,
     };
 
     UserModel.create(user)
