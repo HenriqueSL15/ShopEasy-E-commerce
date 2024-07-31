@@ -11,10 +11,35 @@ function Payment() {
 
   const [availableMoney, setAvailableMoney] = useState(user.money);
 
+  const updateUser = async (updatedUser) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/update/${user.email}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedUser),
+        }
+      );
+
+      if (response.ok) {
+        const newUser = await response.json();
+        setUser(newUser); // Atualiza o estado no UserContext
+        console.log("User updated successfully:", newUser);
+      } else {
+        console.error("Failed to update user");
+      }
+    } catch (err) {
+      console.error("Error updating user:", err);
+    }
+  };
+
   useEffect(() => {
     // Atualiza o estado quando o usuário mudar
     setAvailableMoney(user.money);
-    console.log(user.money);
+    updateUser(user);
   }, [user.money]);
 
   function takeMoney() {

@@ -52,6 +52,28 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+// Rota para atualizar um valor específico (update)
+app.put("/update/:email", async (req, res) => {
+  const { email } = req.params;
+  const updatedUser = req.body;
+
+  try {
+    const user = await UserModel.findOneAndUpdate(
+      { email: email }, // Filtro para encontrar o usuário pelo email
+      { $set: updatedUser }, // Atualiza todos os campos com os novos dados
+      { new: true } // Retorna o documento atualizado
+    );
+
+    if (user) {
+      res.json(user); // Retorna o usuário atualizado
+    } else {
+      res.status(404).json("User not found");
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 app.listen(3001, () => {
   console.log("Server is running!");
 });
