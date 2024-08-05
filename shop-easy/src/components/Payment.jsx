@@ -1,13 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "./UserContext.jsx";
+import { ShoppingListContext } from "./ShoppingCartContext.jsx";
 import Header from "./Header.jsx";
 import Contact from "./Contact.jsx";
 
 function Payment() {
   const location = useLocation();
+  const Navigate = useNavigate();
+
   const { times, valor } = location.state || {};
   const { user, setUser } = useContext(UserContext);
+  const { shoppingList, setShoppingList } = useContext(ShoppingListContext);
 
   const [availableMoney, setAvailableMoney] = useState(user.money);
 
@@ -57,6 +61,8 @@ function Payment() {
 
     // Atualiza o estado local
     setAvailableMoney((prevMoney) => prevMoney - normalizedValue);
+    setShoppingList([]);
+    Navigate("/");
   }
 
   return (
