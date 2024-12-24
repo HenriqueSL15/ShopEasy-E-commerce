@@ -4,7 +4,7 @@ Este projeto é um site demo de um supermercado online, projetado para ser fáci
 O site permite que você cria uma conta, logue na mesma, adicione produtos no seu carrinho e "compre" esses produtos posteriormente.
 
 ## 📸 Demonstração
-Acesse a demonstração ao vivo [aqui]([https://seusite.com](https://zippy-kitten-ce10f9.netlify.app/)).
+Acesse a demonstração ao vivo [aqui](https://zippy-kitten-ce10f9.netlify.app/).
 
 ## 🚀 Tecnologias Utilizadas
 - **React com JSX**: Para o desenvolvimento do frontend.
