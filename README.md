@@ -4,7 +4,7 @@ Este projeto é um site demo de um supermercado online, projetado para ser fáci
 O site permite que você cria uma conta, logue na mesma, adicione produtos no seu carrinho e "compre" esses produtos posteriormente.
 
 ## 📸 Demonstração
-Acesse a demonstração ao vivo [aqui](https://seusite.com).
+Acesse a demonstração ao vivo [aqui]([https://seusite.com](https://zippy-kitten-ce10f9.netlify.app/)).
 
 ## 🚀 Tecnologias Utilizadas
 - **React com JSX**: Para o desenvolvimento do frontend.
@@ -26,18 +26,6 @@ Acesse a demonstração ao vivo [aqui](https://seusite.com).
 ## 📂 Estrutura do Projeto
 ``` 
 git clone https://github.com/seuusuario/seurepositorio.git
-
-# Navegue até a pasta do backend
-cd server
-
-# Instale as dependências
-npm install
-
-# Inicie o servidor
-npm start
-
-# Em outra aba do terminal, navegue até a pasta do frontend
-cd shop-easy
 
 # Instale as dependências
 npm install
