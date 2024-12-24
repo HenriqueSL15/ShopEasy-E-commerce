@@ -18,7 +18,7 @@ function Payment() {
   const updateUser = async (updatedUser) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/update/${user.email}`,
+        `https://shop-easy-backend.vercel.app/update/${user.email}`,
         {
           method: "PUT",
           headers: {
