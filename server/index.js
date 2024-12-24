@@ -84,8 +84,6 @@ app.put("/update/:email", async (req, res) => {
   }
 });
 
-module.exports = app;
-
-// app.listen(3001, () => {
-//   console.log("Server is running!");
-// });
+app.listen(3001, () => {
+  console.log("Server is running!");
+});
