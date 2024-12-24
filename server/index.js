@@ -13,6 +13,16 @@ mongoose.connect(
   "mongodb+srv://myAtlasDBUser:135790@myatlasclusteredu.ufhaxua.mongodb.net/usersDatabase?retryWrites=true&w=majority&appName=myAtlasClusterEDU"
 );
 
+const users = [];
+
+app.get("/", (req, res) => {
+  return res.json("Hello World");
+});
+
+app.get("/users", (req, res) => {
+  return res.json(users);
+});
+
 app.post("/signin", async (req, res) => {
   const { email, password } = req.body;
 
