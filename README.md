@@ -25,7 +25,7 @@ Acesse a demonstração ao vivo [aqui](https://zippy-kitten-ce10f9.netlify.app/)
 
 ## 📂 Estrutura do Projeto
 ``` 
-git clone https://github.com/seuusuario/seurepositorio.git
+git clone https://github.com/HenriqueSL15/ShopEasy-E-commerce.git
 
 # Instale as dependências
 npm install
